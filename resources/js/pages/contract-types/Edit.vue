@@ -3,6 +3,7 @@ import { Form, Head } from '@inertiajs/vue3';
 import Heading from '@/components/Heading.vue';
 import InputError from '@/components/InputError.vue';
 import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { index, update } from '@/routes/contract-types';
@@ -14,8 +15,15 @@ type ContractType = {
     is_active: boolean;
 };
 
+type CaseTypeOption = {
+    value: string;
+    label: string;
+};
+
 defineProps<{
     contractType: ContractType;
+    caseTypes: CaseTypeOption[];
+    enabledCaseTypes: string[];
 }>();
 
 defineOptions({
@@ -34,7 +42,7 @@ defineOptions({
         <Form
             v-bind="update.form({ contractType: contractType.id })"
             v-slot="{ errors, processing }"
-            class="max-w-lg space-y-4"
+            class="max-w-lg space-y-6"
         >
             <div class="grid gap-2">
                 <Label for="name">Name</Label>
@@ -47,6 +55,30 @@ defineOptions({
                 <Input id="description" name="description" :default-value="contractType.description ?? undefined" placeholder="Optional" />
                 <InputError :message="errors.description" />
             </div>
+
+            <fieldset class="grid gap-3">
+                <legend class="text-sm font-medium leading-none">Enabled case types</legend>
+                <p class="text-muted-foreground text-xs">
+                    Select which case types can be opened for employers on this contract type.
+                    If none are selected, all case types are available.
+                </p>
+                <div class="grid gap-2">
+                    <div
+                        v-for="type in caseTypes"
+                        :key="type.value"
+                        class="flex items-center gap-2"
+                    >
+                        <Checkbox
+                            :id="`case_type_${type.value}`"
+                            :name="`case_types[]`"
+                            :value="type.value"
+                            :default-checked="enabledCaseTypes.includes(type.value)"
+                        />
+                        <Label :for="`case_type_${type.value}`" class="font-normal">{{ type.label }}</Label>
+                    </div>
+                </div>
+                <InputError :message="errors['case_types']" />
+            </fieldset>
 
             <div class="flex items-center gap-3">
                 <Button type="submit" :disabled="processing">Save changes</Button>
