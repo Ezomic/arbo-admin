@@ -6,7 +6,7 @@ use App\Http\Controllers\Api\RolePermissionApiController;
 use App\Http\Controllers\Api\TaskTypeApiController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth:api-client', 'throttle:api-client'])->group(function () {
+Route::middleware(['auth:api-client', 'throttle:api-internal'])->group(function () {
     Route::get('contract-types', [ContractTypeApiController::class, 'index'])
         ->middleware('ability:contract-types:read');
 
