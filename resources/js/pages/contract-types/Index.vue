@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Form, Head } from '@inertiajs/vue3';
+import { Form, Head, Link } from '@inertiajs/vue3';
 import { Plus } from '@lucide/vue';
 import { ref } from 'vue';
 import Heading from '@/components/Heading.vue';
@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { store } from '@/routes/contract-types';
+import { edit, store } from '@/routes/contract-types';
 
 type ContractType = {
     id: string;
@@ -39,14 +39,19 @@ const showCreateDialog = ref(false);
         </div>
 
         <ul class="flex flex-col gap-2">
-            <li v-for="contractType in contractTypes" :key="contractType.id" class="rounded-lg border p-4">
-                <div class="font-medium">{{ contractType.name }}</div>
-                <div v-if="contractType.description" class="text-sm text-muted-foreground">
-                    {{ contractType.description }}
-                </div>
-                <div class="mt-1 text-xs text-muted-foreground">
-                    {{ contractType.is_active ? 'Active' : 'Inactive' }}
-                </div>
+            <li v-for="contractType in contractTypes" :key="contractType.id">
+                <Link
+                    :href="edit.url(contractType)"
+                    class="flex flex-col rounded-lg border p-4 transition-colors hover:bg-muted/50"
+                >
+                    <div class="font-medium">{{ contractType.name }}</div>
+                    <div v-if="contractType.description" class="text-sm text-muted-foreground">
+                        {{ contractType.description }}
+                    </div>
+                    <div class="mt-1 text-xs text-muted-foreground">
+                        {{ contractType.is_active ? 'Active' : 'Inactive' }}
+                    </div>
+                </Link>
             </li>
             <li v-if="contractTypes.length === 0" class="text-sm text-muted-foreground">
                 No contract types yet.

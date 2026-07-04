@@ -29,6 +29,13 @@ class ContractTypeController extends Controller
         return to_route('contract-types.index');
     }
 
+    public function edit(ContractType $contractType): Response
+    {
+        return Inertia::render('contract-types/Edit', [
+            'contractType' => $contractType,
+        ]);
+    }
+
     public function update(Request $request, ContractType $contractType): RedirectResponse
     {
         $data = $request->validate([

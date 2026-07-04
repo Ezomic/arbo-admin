@@ -39,4 +39,9 @@ return [
         'email' => env('AP_NOTIFICATION_EMAIL'),
     ],
 
+    'identity' => [
+        'base_url' => env('IDENTITY_BASE_URL', 'https://identity.test'),
+        'token' => env('IDENTITY_SERVICE_TOKEN'),
+    ],
+
 ];
