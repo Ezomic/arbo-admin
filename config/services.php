@@ -40,4 +40,9 @@ return [
         'token' => env('IDENTITY_SERVICE_TOKEN'),
     ],
 
+    'doctors' => [
+        'base_url' => env('DOCTORS_BASE_URL', 'https://doctors.test'),
+        'token' => env('DOCTORS_SERVICE_TOKEN'),
+    ],
+
 ];

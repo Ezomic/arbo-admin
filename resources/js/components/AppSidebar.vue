@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { ClipboardList, LayoutGrid, ShieldCheck, Users } from '@lucide/vue';
+import { ClipboardList, LayoutGrid, ScrollText, ShieldCheck, Users } from '@lucide/vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavMain from '@/components/NavMain.vue';
 import NavUser from '@/components/NavUser.vue';
@@ -13,6 +13,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
+import { index as auditLogsIndex } from '@/routes/audit-logs';
 import { index } from '@/routes/contract-types';
 import { index as rolesIndex } from '@/routes/roles';
 import { index as taskTypesIndex } from '@/routes/task-types';
@@ -39,6 +40,11 @@ const mainNavItems: NavItem[] = [
         title: 'Users',
         href: usersIndex(),
         icon: Users,
+    },
+    {
+        title: 'Audit Log',
+        href: auditLogsIndex(),
+        icon: ScrollText,
     },
 ];
 </script>
