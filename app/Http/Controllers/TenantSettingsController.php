@@ -36,6 +36,8 @@ class TenantSettingsController extends Controller
 
         Tenant::query()->where('id', $user->tenant_id)->update(['require_2fa' => $data['require_2fa']]);
 
+        Inertia::flash('toast', ['type' => 'success', 'message' => 'Tenant settings saved.']);
+
         return to_route('tenant-settings.show');
     }
 }

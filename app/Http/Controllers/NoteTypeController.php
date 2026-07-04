@@ -24,14 +24,14 @@ class NoteTypeController extends Controller
             ->latest()
             ->get()
             ->map(fn (NoteType $nt) => [
-                'id'          => $nt->id,
-                'app_slug'    => $nt->app_slug,
-                'name'        => $nt->name,
+                'id' => $nt->id,
+                'app_slug' => $nt->app_slug,
+                'name' => $nt->name,
                 'permissions' => $nt->permissions->map(fn ($p) => [
-                    'id'         => $p->id,
-                    'role'       => $p->role,
-                    'can_read'   => $p->can_read,
-                    'can_write'  => $p->can_write,
+                    'id' => $p->id,
+                    'role' => $p->role,
+                    'can_read' => $p->can_read,
+                    'can_write' => $p->can_write,
                     'can_update' => $p->can_update,
                     'can_delete' => $p->can_delete,
                 ]),
@@ -42,33 +42,35 @@ class NoteTypeController extends Controller
             ->get(['id', 'app_slug', 'name']);
 
         return Inertia::render('note-types/Index', [
-            'portals'   => self::PORTALS,
+            'portals' => self::PORTALS,
             'noteTypes' => $noteTypes,
-            'roles'     => $roles,
+            'roles' => $roles,
         ]);
     }
 
     public function store(Request $request): RedirectResponse
     {
         $data = $request->validate([
-            'app_slug'              => ['required', 'string', Rule::in(array_column(self::PORTALS, 'slug'))],
-            'name'                  => ['required', 'string', 'max:255'],
-            'permissions'           => ['array'],
-            'permissions.*.role'       => ['required', 'string', 'max:255'],
-            'permissions.*.can_read'   => ['boolean'],
-            'permissions.*.can_write'  => ['boolean'],
+            'app_slug' => ['required', 'string', Rule::in(array_column(self::PORTALS, 'slug'))],
+            'name' => ['required', 'string', 'max:255'],
+            'permissions' => ['array'],
+            'permissions.*.role' => ['required', 'string', 'max:255'],
+            'permissions.*.can_read' => ['boolean'],
+            'permissions.*.can_write' => ['boolean'],
             'permissions.*.can_update' => ['boolean'],
             'permissions.*.can_delete' => ['boolean'],
         ]);
 
         $noteType = NoteType::query()->create([
             'app_slug' => $data['app_slug'],
-            'name'     => $data['name'],
+            'name' => $data['name'],
         ]);
 
         foreach ($data['permissions'] ?? [] as $perm) {
             $noteType->permissions()->create($perm);
         }
+
+        Inertia::flash('toast', ['type' => 'success', 'message' => 'Note type created.']);
 
         return to_route('note-types.index');
     }
@@ -76,11 +78,11 @@ class NoteTypeController extends Controller
     public function update(Request $request, NoteType $noteType): RedirectResponse
     {
         $data = $request->validate([
-            'name'                     => ['required', 'string', 'max:255'],
-            'permissions'              => ['array'],
-            'permissions.*.role'       => ['required', 'string', 'max:255'],
-            'permissions.*.can_read'   => ['boolean'],
-            'permissions.*.can_write'  => ['boolean'],
+            'name' => ['required', 'string', 'max:255'],
+            'permissions' => ['array'],
+            'permissions.*.role' => ['required', 'string', 'max:255'],
+            'permissions.*.can_read' => ['boolean'],
+            'permissions.*.can_write' => ['boolean'],
             'permissions.*.can_update' => ['boolean'],
             'permissions.*.can_delete' => ['boolean'],
         ]);
@@ -101,12 +103,16 @@ class NoteTypeController extends Controller
         $incomingRoles = $incoming->pluck('role')->all();
         $noteType->permissions()->whereNotIn('role', $incomingRoles)->delete();
 
+        Inertia::flash('toast', ['type' => 'success', 'message' => 'Note type updated.']);
+
         return to_route('note-types.index');
     }
 
     public function destroy(NoteType $noteType): RedirectResponse
     {
         $noteType->delete();
+
+        Inertia::flash('toast', ['type' => 'success', 'message' => 'Note type deleted.']);
 
         return to_route('note-types.index');
     }

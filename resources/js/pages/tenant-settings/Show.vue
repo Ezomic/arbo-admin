@@ -19,7 +19,7 @@ const enabled = ref(props.require2fa);
 
     <div class="flex flex-col gap-6 p-4">
         <div class="flex items-center gap-3">
-            <ShieldCheck class="text-muted-foreground size-5" />
+            <ShieldCheck class="size-5 text-muted-foreground" />
             <Heading
                 title="Tenant Settings"
                 description="Security and compliance settings for your organisation"
@@ -31,24 +31,34 @@ const enabled = ref(props.require2fa);
             v-slot="{ processing }"
             class="flex flex-col gap-6"
         >
-            <div class="flex items-center justify-between rounded-lg border p-4">
+            <div
+                class="flex items-center justify-between rounded-lg border p-4"
+            >
                 <div>
-                    <div class="font-medium">Require two-factor authentication</div>
-                    <div class="text-muted-foreground text-sm">
-                        All users must configure TOTP or a passkey before accessing any portal.
-                        Recommended for NEN 7510 compliance.
+                    <div class="font-medium">
+                        Require two-factor authentication
+                    </div>
+                    <div class="text-sm text-muted-foreground">
+                        All users must configure TOTP or a passkey before
+                        accessing any portal. Recommended for NEN 7510
+                        compliance.
                     </div>
                 </div>
                 <Switch
-                    v-model:checked="enabled"
+                    v-model="enabled"
+                    aria-label="Require two-factor authentication"
+                />
+                <input
+                    type="hidden"
                     name="require_2fa"
                     :value="enabled ? '1' : '0'"
                 />
-                <input type="hidden" name="require_2fa" :value="enabled ? '1' : '0'" />
             </div>
 
             <div>
-                <Button type="submit" :disabled="processing">Save settings</Button>
+                <Button type="submit" :disabled="processing"
+                    >Save settings</Button
+                >
             </div>
         </Form>
     </div>
