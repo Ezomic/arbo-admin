@@ -46,6 +46,23 @@ class RoleController extends Controller
         ]);
     }
 
+    public function edit(Role $role): Response
+    {
+        return Inertia::render('roles/Edit', [
+            'role' => [
+                'id' => $role->id,
+                'app_slug' => $role->app_slug,
+                'name' => $role->name,
+                'description' => $role->description,
+                'permission_ids' => $role->permissions()->pluck('id'),
+            ],
+            'permissions' => Permission::query()
+                ->where('app_slug', $role->app_slug)
+                ->orderBy('name')
+                ->get(['id', 'parent_id', 'app_slug', 'name']),
+        ]);
+    }
+
     public function store(Request $request): RedirectResponse
     {
         $appSlug = $request->validate([

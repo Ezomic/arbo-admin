@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { ClipboardList, LayoutGrid, ShieldCheck } from '@lucide/vue';
+import { ClipboardList, LayoutGrid, ShieldCheck, Users } from '@lucide/vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavMain from '@/components/NavMain.vue';
 import NavUser from '@/components/NavUser.vue';
@@ -16,6 +16,7 @@ import {
 import { index } from '@/routes/contract-types';
 import { index as rolesIndex } from '@/routes/roles';
 import { index as taskTypesIndex } from '@/routes/task-types';
+import { index as usersIndex } from '@/routes/users';
 import type { NavItem } from '@/types';
 
 const mainNavItems: NavItem[] = [
@@ -33,6 +34,11 @@ const mainNavItems: NavItem[] = [
         title: 'Roles',
         href: rolesIndex(),
         icon: ShieldCheck,
+    },
+    {
+        title: 'Users',
+        href: usersIndex(),
+        icon: Users,
     },
 ];
 </script>
