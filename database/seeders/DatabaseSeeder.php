@@ -24,11 +24,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $client = ApiClient::query()->firstOrCreate(['name' => 'case-officers-service']);
-
-        $token = $client->createToken('case-officers-service', ['contract-types:read'])->plainTextToken;
-
-        $this->command->info("case-officers-service token (put in case-officers/.env as ADMIN_SERVICE_TOKEN):\n{$token}");
+        $coClient = ApiClient::query()->firstOrCreate(['name' => 'case-officers-service']);
+        $coToken = $coClient->createToken('case-officers-service', ['contract-types:read', 'note-types:read'])->plainTextToken;
+        $this->command?->info("case-officers-service token (put in case-officers/.env as ADMIN_SERVICE_TOKEN):\n{$coToken}");
 
         $this->seedDemoRoles();
         $this->seedTaskTypes();

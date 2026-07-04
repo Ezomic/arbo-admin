@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuditLogController;
 use App\Http\Controllers\ContractTypeController;
 use App\Http\Controllers\DataBreachController;
 use App\Http\Controllers\NoteTypeController;
@@ -48,6 +49,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('users', [UserController::class, 'store'])->name('users.store');
     Route::put('users/{uuid}', [UserController::class, 'update'])->name('users.update');
     Route::delete('users/{uuid}', [UserController::class, 'destroy'])->name('users.destroy');
+
+    Route::get('audit-logs', [AuditLogController::class, 'index'])->name('audit-logs.index');
 });
 
 require __DIR__.'/settings.php';
