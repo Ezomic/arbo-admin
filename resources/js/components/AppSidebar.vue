@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { AlertTriangle, ClipboardList, LayoutGrid, ScrollText, ShieldCheck, Users } from '@lucide/vue';
+import { AlertTriangle, ClipboardList, LayoutGrid, ScrollText, Settings, ShieldCheck, Users } from '@lucide/vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavMain from '@/components/NavMain.vue';
 import NavUser from '@/components/NavUser.vue';
@@ -14,6 +14,7 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { index as auditLogsIndex } from '@/routes/audit-logs';
+import { show as tenantSettingsShow } from '@/routes/tenant-settings';
 import { index } from '@/routes/contract-types';
 import { index as dataBreachesIndex } from '@/routes/data-breaches';
 import { index as rolesIndex } from '@/routes/roles';
@@ -51,6 +52,11 @@ const mainNavItems: NavItem[] = [
         title: 'Audit Log',
         href: auditLogsIndex(),
         icon: ScrollText,
+    },
+    {
+        title: 'Tenant Settings',
+        href: tenantSettingsShow(),
+        icon: Settings,
     },
 ];
 </script>

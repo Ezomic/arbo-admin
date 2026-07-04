@@ -41,4 +41,9 @@ class IdentityClient extends InternalApiClient
     {
         $this->delete("users/{$uuid}");
     }
+
+    public function updateTenant(string $tenantId, bool $require2fa): array
+    {
+        return $this->patch("tenants/{$tenantId}", ['require_2fa' => $require2fa]);
+    }
 }

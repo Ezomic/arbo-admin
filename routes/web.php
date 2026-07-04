@@ -7,6 +7,7 @@ use App\Http\Controllers\NoteTypeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TaskTypeController;
+use App\Http\Controllers\TenantSettingsController;
 use Illuminate\Support\Facades\Route;
 use RobbinThijssen\IdentitySsoKit\Http\Controllers\LogoutController;
 use RobbinThijssen\IdentitySsoKit\Http\Controllers\RedirectToIdentityController;
@@ -51,6 +52,9 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('users/{uuid}', [UserController::class, 'destroy'])->name('users.destroy');
 
     Route::get('audit-logs', [AuditLogController::class, 'index'])->name('audit-logs.index');
+
+    Route::get('tenant-settings', [TenantSettingsController::class, 'show'])->name('tenant-settings.show');
+    Route::put('tenant-settings', [TenantSettingsController::class, 'update'])->name('tenant-settings.update');
 });
 
 require __DIR__.'/settings.php';
