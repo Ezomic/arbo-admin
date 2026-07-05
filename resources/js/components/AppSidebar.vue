@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { ClipboardList, LayoutGrid, ShieldCheck } from '@lucide/vue';
+import { AlertTriangle, ClipboardList, LayoutGrid, ShieldCheck } from '@lucide/vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavMain from '@/components/NavMain.vue';
 import NavUser from '@/components/NavUser.vue';
@@ -14,6 +14,7 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { index } from '@/routes/contract-types';
+import { index as dataBreachesIndex } from '@/routes/data-breaches';
 import { index as rolesIndex } from '@/routes/roles';
 import { index as taskTypesIndex } from '@/routes/task-types';
 import type { NavItem } from '@/types';
@@ -33,6 +34,11 @@ const mainNavItems: NavItem[] = [
         title: 'Roles',
         href: rolesIndex(),
         icon: ShieldCheck,
+    },
+    {
+        title: 'Data Breaches',
+        href: dataBreachesIndex(),
+        icon: AlertTriangle,
     },
 ];
 </script>
