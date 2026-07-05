@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
 
         $token = $client->createToken('case-officers-service', ['contract-types:read'])->plainTextToken;
 
-        $this->command?->info("case-officers-service token (put in case-officers/.env as ADMIN_SERVICE_TOKEN):\n{$token}");
+        $this->command->info("case-officers-service token (put in case-officers/.env as ADMIN_SERVICE_TOKEN):\n{$token}");
 
         $this->seedDemoRoles();
     }
@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
         $tenant = Tenant::query()->first();
 
         if ($tenant === null) {
-            $this->command?->warn('No tenant synced yet (log into Admin once first) — skipping demo role seeding.');
+            $this->command->warn('No tenant synced yet (log into Admin once first) — skipping demo role seeding.');
 
             return;
         }
@@ -77,6 +77,6 @@ class DatabaseSeeder extends Seeder
             }
         }
 
-        $this->command?->info('Seeded demo roles for case-officers, employers, doctors, and admin.');
+        $this->command->info('Seeded demo roles for case-officers, employers, doctors, and admin.');
     }
 }
