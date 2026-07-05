@@ -60,7 +60,7 @@ class RoleController extends Controller
             'description' => $data['description'] ?? null,
         ]);
 
-        $role->permissions()->sync($data['permission_ids'] ?? []);
+        $role->permissions()->sync($data['permission_ids']);
 
         return to_route('roles.index');
     }
@@ -76,7 +76,7 @@ class RoleController extends Controller
             'description' => $data['description'] ?? null,
         ]);
 
-        $role->permissions()->sync($data['permission_ids'] ?? []);
+        $role->permissions()->sync($data['permission_ids']);
 
         return to_route('roles.index');
     }

@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 
 class ContractTypeApiController extends Controller
 {
+    /**
+     * @return Collection<int, ContractType>
+     */
     public function index(Request $request): Collection
     {
         $tenantId = $request->validate(['tenant_id' => ['required', 'uuid']])['tenant_id'];
