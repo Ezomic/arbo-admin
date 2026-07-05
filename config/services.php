@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'ap' => [
+        'email' => env('AP_NOTIFICATION_EMAIL'),
+    ],
+
 ];

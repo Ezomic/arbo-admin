@@ -2,6 +2,7 @@ import Api from './Api'
 import ContractTypeController from './ContractTypeController'
 import TaskTypeController from './TaskTypeController'
 import RoleController from './RoleController'
+import DataBreachController from './DataBreachController'
 import Settings from './Settings'
 
 const Controllers = {
@@ -9,6 +10,7 @@ const Controllers = {
     ContractTypeController: Object.assign(ContractTypeController, ContractTypeController),
     TaskTypeController: Object.assign(TaskTypeController, TaskTypeController),
     RoleController: Object.assign(RoleController, RoleController),
+    DataBreachController: Object.assign(DataBreachController, DataBreachController),
     Settings: Object.assign(Settings, Settings),
 }
 
