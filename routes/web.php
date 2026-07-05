@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContractTypeController;
+use App\Http\Controllers\DataBreachController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TaskTypeController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('roles', [RoleController::class, 'index'])->name('roles.index');
     Route::post('roles', [RoleController::class, 'store'])->name('roles.store');
     Route::put('roles/{role}', [RoleController::class, 'update'])->name('roles.update');
+
+    Route::get('data-breaches', [DataBreachController::class, 'index'])->name('data-breaches.index');
+    Route::get('data-breaches/create', [DataBreachController::class, 'create'])->name('data-breaches.create');
+    Route::post('data-breaches', [DataBreachController::class, 'store'])->name('data-breaches.store');
+    Route::patch('data-breaches/{dataBreach}/notify', [DataBreachController::class, 'notify'])->name('data-breaches.notify');
 });
 
 require __DIR__.'/settings.php';
