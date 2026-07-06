@@ -79,6 +79,8 @@ class RoleController extends Controller
 
         $role->permissions()->sync($data['permission_ids']);
 
+        Inertia::flash('toast', ['type' => 'success', 'message' => 'Role created.']);
+
         return to_route('roles.index');
     }
 
@@ -94,6 +96,8 @@ class RoleController extends Controller
         ]);
 
         $role->permissions()->sync($data['permission_ids']);
+
+        Inertia::flash('toast', ['type' => 'success', 'message' => 'Role updated.']);
 
         return to_route('roles.index');
     }
