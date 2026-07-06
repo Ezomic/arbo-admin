@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { AlertTriangle, ClipboardList, LayoutGrid, ShieldCheck } from '@lucide/vue';
+import { AlertTriangle, ClipboardList, FileText, LayoutGrid, ScrollText, Settings, ShieldCheck, Users } from '@lucide/vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavMain from '@/components/NavMain.vue';
 import NavUser from '@/components/NavUser.vue';
@@ -13,10 +13,14 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
+import { index as auditLogsIndex } from '@/routes/audit-logs';
 import { index } from '@/routes/contract-types';
 import { index as dataBreachesIndex } from '@/routes/data-breaches';
+import { index as noteTypesIndex } from '@/routes/note-types';
 import { index as rolesIndex } from '@/routes/roles';
 import { index as taskTypesIndex } from '@/routes/task-types';
+import { show as tenantSettingsShow } from '@/routes/tenant-settings';
+import { index as usersIndex } from '@/routes/users';
 import type { NavItem } from '@/types';
 
 const mainNavItems: NavItem[] = [
@@ -39,6 +43,26 @@ const mainNavItems: NavItem[] = [
         title: 'Data Breaches',
         href: dataBreachesIndex(),
         icon: AlertTriangle,
+    },
+    {
+        title: 'Note Types',
+        href: noteTypesIndex(),
+        icon: FileText,
+    },
+    {
+        title: 'Users',
+        href: usersIndex(),
+        icon: Users,
+    },
+    {
+        title: 'Audit Log',
+        href: auditLogsIndex(),
+        icon: ScrollText,
+    },
+    {
+        title: 'Tenant Settings',
+        href: tenantSettingsShow(),
+        icon: Settings,
     },
 ];
 </script>
