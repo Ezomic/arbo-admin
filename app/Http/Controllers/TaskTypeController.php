@@ -26,6 +26,8 @@ class TaskTypeController extends Controller
 
         TaskType::query()->create($data);
 
+        Inertia::flash('toast', ['type' => 'success', 'message' => 'Task type created.']);
+
         return to_route('task-types.index');
     }
 
@@ -45,6 +47,8 @@ class TaskTypeController extends Controller
         ]);
 
         $taskType->update($data);
+
+        Inertia::flash('toast', ['type' => 'success', 'message' => 'Task type updated.']);
 
         return to_route('task-types.index');
     }

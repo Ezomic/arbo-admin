@@ -243,7 +243,7 @@ edit.form = editForm
 
 /**
 * @see \App\Http\Controllers\RoleController::update
-* @see app/Http/Controllers/RoleController.php:85
+* @see app/Http/Controllers/RoleController.php:87
 * @route '/roles/{role}'
 */
 export const update = (args: { role: string | { id: string } } | [role: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -258,7 +258,7 @@ update.definition = {
 
 /**
 * @see \App\Http\Controllers\RoleController::update
-* @see app/Http/Controllers/RoleController.php:85
+* @see app/Http/Controllers/RoleController.php:87
 * @route '/roles/{role}'
 */
 update.url = (args: { role: string | { id: string } } | [role: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions) => {
@@ -291,7 +291,7 @@ update.url = (args: { role: string | { id: string } } | [role: string | { id: st
 
 /**
 * @see \App\Http\Controllers\RoleController::update
-* @see app/Http/Controllers/RoleController.php:85
+* @see app/Http/Controllers/RoleController.php:87
 * @route '/roles/{role}'
 */
 update.put = (args: { role: string | { id: string } } | [role: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -301,7 +301,7 @@ update.put = (args: { role: string | { id: string } } | [role: string | { id: st
 
 /**
 * @see \App\Http\Controllers\RoleController::update
-* @see app/Http/Controllers/RoleController.php:85
+* @see app/Http/Controllers/RoleController.php:87
 * @route '/roles/{role}'
 */
 const updateForm = (args: { role: string | { id: string } } | [role: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -316,7 +316,7 @@ const updateForm = (args: { role: string | { id: string } } | [role: string | { 
 
 /**
 * @see \App\Http\Controllers\RoleController::update
-* @see app/Http/Controllers/RoleController.php:85
+* @see app/Http/Controllers/RoleController.php:87
 * @route '/roles/{role}'
 */
 updateForm.put = (args: { role: string | { id: string } } | [role: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({

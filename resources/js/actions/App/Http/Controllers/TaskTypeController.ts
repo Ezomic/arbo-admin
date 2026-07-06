@@ -138,7 +138,7 @@ store.form = storeForm
 
 /**
 * @see \App\Http\Controllers\TaskTypeController::edit
-* @see app/Http/Controllers/TaskTypeController.php:32
+* @see app/Http/Controllers/TaskTypeController.php:34
 * @route '/task-types/{taskType}/edit'
 */
 export const edit = (args: { taskType: string | { id: string } } | [taskType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -153,7 +153,7 @@ edit.definition = {
 
 /**
 * @see \App\Http\Controllers\TaskTypeController::edit
-* @see app/Http/Controllers/TaskTypeController.php:32
+* @see app/Http/Controllers/TaskTypeController.php:34
 * @route '/task-types/{taskType}/edit'
 */
 edit.url = (args: { taskType: string | { id: string } } | [taskType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions) => {
@@ -186,7 +186,7 @@ edit.url = (args: { taskType: string | { id: string } } | [taskType: string | { 
 
 /**
 * @see \App\Http\Controllers\TaskTypeController::edit
-* @see app/Http/Controllers/TaskTypeController.php:32
+* @see app/Http/Controllers/TaskTypeController.php:34
 * @route '/task-types/{taskType}/edit'
 */
 edit.get = (args: { taskType: string | { id: string } } | [taskType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -196,7 +196,7 @@ edit.get = (args: { taskType: string | { id: string } } | [taskType: string | { 
 
 /**
 * @see \App\Http\Controllers\TaskTypeController::edit
-* @see app/Http/Controllers/TaskTypeController.php:32
+* @see app/Http/Controllers/TaskTypeController.php:34
 * @route '/task-types/{taskType}/edit'
 */
 edit.head = (args: { taskType: string | { id: string } } | [taskType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -206,7 +206,7 @@ edit.head = (args: { taskType: string | { id: string } } | [taskType: string | {
 
 /**
 * @see \App\Http\Controllers\TaskTypeController::edit
-* @see app/Http/Controllers/TaskTypeController.php:32
+* @see app/Http/Controllers/TaskTypeController.php:34
 * @route '/task-types/{taskType}/edit'
 */
 const editForm = (args: { taskType: string | { id: string } } | [taskType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -216,7 +216,7 @@ const editForm = (args: { taskType: string | { id: string } } | [taskType: strin
 
 /**
 * @see \App\Http\Controllers\TaskTypeController::edit
-* @see app/Http/Controllers/TaskTypeController.php:32
+* @see app/Http/Controllers/TaskTypeController.php:34
 * @route '/task-types/{taskType}/edit'
 */
 editForm.get = (args: { taskType: string | { id: string } } | [taskType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -226,7 +226,7 @@ editForm.get = (args: { taskType: string | { id: string } } | [taskType: string 
 
 /**
 * @see \App\Http\Controllers\TaskTypeController::edit
-* @see app/Http/Controllers/TaskTypeController.php:32
+* @see app/Http/Controllers/TaskTypeController.php:34
 * @route '/task-types/{taskType}/edit'
 */
 editForm.head = (args: { taskType: string | { id: string } } | [taskType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -243,7 +243,7 @@ edit.form = editForm
 
 /**
 * @see \App\Http\Controllers\TaskTypeController::update
-* @see app/Http/Controllers/TaskTypeController.php:39
+* @see app/Http/Controllers/TaskTypeController.php:41
 * @route '/task-types/{taskType}'
 */
 export const update = (args: { taskType: string | { id: string } } | [taskType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -258,7 +258,7 @@ update.definition = {
 
 /**
 * @see \App\Http\Controllers\TaskTypeController::update
-* @see app/Http/Controllers/TaskTypeController.php:39
+* @see app/Http/Controllers/TaskTypeController.php:41
 * @route '/task-types/{taskType}'
 */
 update.url = (args: { taskType: string | { id: string } } | [taskType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions) => {
@@ -291,7 +291,7 @@ update.url = (args: { taskType: string | { id: string } } | [taskType: string | 
 
 /**
 * @see \App\Http\Controllers\TaskTypeController::update
-* @see app/Http/Controllers/TaskTypeController.php:39
+* @see app/Http/Controllers/TaskTypeController.php:41
 * @route '/task-types/{taskType}'
 */
 update.put = (args: { taskType: string | { id: string } } | [taskType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -301,7 +301,7 @@ update.put = (args: { taskType: string | { id: string } } | [taskType: string | 
 
 /**
 * @see \App\Http\Controllers\TaskTypeController::update
-* @see app/Http/Controllers/TaskTypeController.php:39
+* @see app/Http/Controllers/TaskTypeController.php:41
 * @route '/task-types/{taskType}'
 */
 const updateForm = (args: { taskType: string | { id: string } } | [taskType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -316,7 +316,7 @@ const updateForm = (args: { taskType: string | { id: string } } | [taskType: str
 
 /**
 * @see \App\Http\Controllers\TaskTypeController::update
-* @see app/Http/Controllers/TaskTypeController.php:39
+* @see app/Http/Controllers/TaskTypeController.php:41
 * @route '/task-types/{taskType}'
 */
 updateForm.put = (args: { taskType: string | { id: string } } | [taskType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({

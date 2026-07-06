@@ -29,6 +29,8 @@ class ContractTypeController extends Controller
 
         ContractType::query()->create($data);
 
+        Inertia::flash('toast', ['type' => 'success', 'message' => 'Contract type created.']);
+
         return to_route('contract-types.index');
     }
 
@@ -70,6 +72,8 @@ class ContractTypeController extends Controller
                 'case_type' => $type,
             ]);
         }
+
+        Inertia::flash('toast', ['type' => 'success', 'message' => 'Contract type updated.']);
 
         return to_route('contract-types.index');
     }
