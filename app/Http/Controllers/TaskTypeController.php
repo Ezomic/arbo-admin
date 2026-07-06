@@ -29,6 +29,13 @@ class TaskTypeController extends Controller
         return to_route('task-types.index');
     }
 
+    public function edit(TaskType $taskType): Response
+    {
+        return Inertia::render('task-types/Edit', [
+            'taskType' => $taskType,
+        ]);
+    }
+
     public function update(Request $request, TaskType $taskType): RedirectResponse
     {
         $data = $request->validate([

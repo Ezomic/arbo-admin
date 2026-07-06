@@ -4,22 +4,28 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\ContractType;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class ContractTypeApiController extends Controller
 {
-    /**
-     * @return Collection<int, ContractType>
-     */
-    public function index(Request $request): Collection
+    public function index(Request $request): JsonResponse
     {
         $tenantId = $request->validate(['tenant_id' => ['required', 'uuid']])['tenant_id'];
 
-        return ContractType::withoutGlobalScope('tenant')
+        $contractTypes = ContractType::withoutGlobalScope('tenant')
             ->where('tenant_id', $tenantId)
             ->where('is_active', true)
+            ->with('caseTypes')
             ->oldest()
-            ->get();
+            ->get()
+            ->map(fn (ContractType $ct) => [
+                'id' => $ct->id,
+                'tenant_id' => $ct->tenant_id,
+                'name' => $ct->name,
+                'case_types' => $ct->caseTypes->pluck('case_type')->all(),
+            ]);
+
+        return response()->json($contractTypes);
     }
 }
