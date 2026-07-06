@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition } from './../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition } from './../../../../wayfinder'
 /**
 * @see \App\Http\Controllers\TenantSettingsController::show
 * @see app/Http/Controllers/TenantSettingsController.php:16
@@ -146,9 +146,6 @@ updateForm.put = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => (
 
 update.form = updateForm
 
-const tenantSettings = {
-    show: Object.assign(show, show),
-    update: Object.assign(update, update),
-}
+const TenantSettingsController = { show, update }
 
-export default tenantSettings
+export default TenantSettingsController

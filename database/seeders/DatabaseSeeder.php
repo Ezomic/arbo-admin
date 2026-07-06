@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
     {
         $coClient = ApiClient::query()->firstOrCreate(['name' => 'case-officers-service']);
         $coToken = $coClient->createToken('case-officers-service', ['contract-types:read', 'note-types:read', 'task-types:read', 'role-permissions:read'])->plainTextToken;
-        $this->command?->info("case-officers-service token (put in case-officers/.env as ADMIN_SERVICE_TOKEN):\n{$coToken}");
+        $this->command->info("case-officers-service token (put in case-officers/.env as ADMIN_SERVICE_TOKEN):\n{$coToken}");
 
         $this->seedDemoRoles();
         $this->seedTaskTypes();
@@ -87,7 +87,7 @@ class DatabaseSeeder extends Seeder
         $tenant = Tenant::query()->first();
 
         if ($tenant === null) {
-            $this->command?->warn('No tenant synced yet — skipping task type seeding.');
+            $this->command->warn('No tenant synced yet — skipping task type seeding.');
 
             return;
         }
@@ -114,7 +114,7 @@ class DatabaseSeeder extends Seeder
             );
         }
 
-        $this->command?->info('Seeded '.count($taskTypes).' task types.');
+        $this->command->info('Seeded '.count($taskTypes).' task types.');
     }
 
     private function seedContractTypes(): void
@@ -122,7 +122,7 @@ class DatabaseSeeder extends Seeder
         $tenant = Tenant::query()->first();
 
         if ($tenant === null) {
-            $this->command?->warn('No tenant synced yet — skipping contract type seeding.');
+            $this->command->warn('No tenant synced yet — skipping contract type seeding.');
 
             return;
         }
@@ -147,6 +147,6 @@ class DatabaseSeeder extends Seeder
             );
         }
 
-        $this->command?->info('Seeded '.count($contractTypes).' contract types.');
+        $this->command->info('Seeded '.count($contractTypes).' contract types.');
     }
 }

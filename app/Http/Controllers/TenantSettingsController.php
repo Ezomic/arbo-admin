@@ -18,8 +18,10 @@ class TenantSettingsController extends Controller
         /** @var User $user */
         $user = Auth::user();
 
+        $tenant = Tenant::where('id', $user->tenant_id)->first();
+
         return Inertia::render('tenant-settings/Show', [
-            'require2fa' => $user->tenant?->require_2fa ?? false,
+            'require2fa' => $tenant === null ? false : $tenant->require_2fa,
         ]);
     }
 

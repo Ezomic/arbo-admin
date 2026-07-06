@@ -59,16 +59,6 @@ function openCreate(slug: string) {
     createAppSlug.value = slug;
     showCreateDialog.value = true;
 }
-
-function defaultPermissions(slug: string): Permission[] {
-    return rolesForSlug(slug).map(r => ({
-        role: r.name,
-        can_read: false,
-        can_write: false,
-        can_update: false,
-        can_delete: false,
-    }));
-}
 </script>
 
 <template>

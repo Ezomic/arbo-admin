@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../../../wayfinder'
 /**
 * @see \App\Http\Controllers\NoteTypeController::index
-* @see app/Http/Controllers/NoteTypeController.php:20
+* @see app/Http/Controllers/NoteTypeController.php:21
 * @route '/note-types'
 */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -16,7 +16,7 @@ index.definition = {
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::index
-* @see app/Http/Controllers/NoteTypeController.php:20
+* @see app/Http/Controllers/NoteTypeController.php:21
 * @route '/note-types'
 */
 index.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ index.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::index
-* @see app/Http/Controllers/NoteTypeController.php:20
+* @see app/Http/Controllers/NoteTypeController.php:21
 * @route '/note-types'
 */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -35,7 +35,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::index
-* @see app/Http/Controllers/NoteTypeController.php:20
+* @see app/Http/Controllers/NoteTypeController.php:21
 * @route '/note-types'
 */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -45,7 +45,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::index
-* @see app/Http/Controllers/NoteTypeController.php:20
+* @see app/Http/Controllers/NoteTypeController.php:21
 * @route '/note-types'
 */
 const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -55,7 +55,7 @@ const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => (
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::index
-* @see app/Http/Controllers/NoteTypeController.php:20
+* @see app/Http/Controllers/NoteTypeController.php:21
 * @route '/note-types'
 */
 indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -65,7 +65,7 @@ indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::index
-* @see app/Http/Controllers/NoteTypeController.php:20
+* @see app/Http/Controllers/NoteTypeController.php:21
 * @route '/note-types'
 */
 indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -82,7 +82,7 @@ index.form = indexForm
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::store
-* @see app/Http/Controllers/NoteTypeController.php:51
+* @see app/Http/Controllers/NoteTypeController.php:52
 * @route '/note-types'
 */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -97,7 +97,7 @@ store.definition = {
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::store
-* @see app/Http/Controllers/NoteTypeController.php:51
+* @see app/Http/Controllers/NoteTypeController.php:52
 * @route '/note-types'
 */
 store.url = (options?: RouteQueryOptions) => {
@@ -106,7 +106,7 @@ store.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::store
-* @see app/Http/Controllers/NoteTypeController.php:51
+* @see app/Http/Controllers/NoteTypeController.php:52
 * @route '/note-types'
 */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -116,7 +116,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::store
-* @see app/Http/Controllers/NoteTypeController.php:51
+* @see app/Http/Controllers/NoteTypeController.php:52
 * @route '/note-types'
 */
 const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -126,7 +126,7 @@ const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => 
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::store
-* @see app/Http/Controllers/NoteTypeController.php:51
+* @see app/Http/Controllers/NoteTypeController.php:52
 * @route '/note-types'
 */
 storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -138,7 +138,7 @@ store.form = storeForm
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::update
-* @see app/Http/Controllers/NoteTypeController.php:76
+* @see app/Http/Controllers/NoteTypeController.php:77
 * @route '/note-types/{noteType}'
 */
 export const update = (args: { noteType: string | { id: string } } | [noteType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -153,7 +153,7 @@ update.definition = {
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::update
-* @see app/Http/Controllers/NoteTypeController.php:76
+* @see app/Http/Controllers/NoteTypeController.php:77
 * @route '/note-types/{noteType}'
 */
 update.url = (args: { noteType: string | { id: string } } | [noteType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions) => {
@@ -186,7 +186,7 @@ update.url = (args: { noteType: string | { id: string } } | [noteType: string | 
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::update
-* @see app/Http/Controllers/NoteTypeController.php:76
+* @see app/Http/Controllers/NoteTypeController.php:77
 * @route '/note-types/{noteType}'
 */
 update.put = (args: { noteType: string | { id: string } } | [noteType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -196,7 +196,7 @@ update.put = (args: { noteType: string | { id: string } } | [noteType: string | 
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::update
-* @see app/Http/Controllers/NoteTypeController.php:76
+* @see app/Http/Controllers/NoteTypeController.php:77
 * @route '/note-types/{noteType}'
 */
 const updateForm = (args: { noteType: string | { id: string } } | [noteType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -211,7 +211,7 @@ const updateForm = (args: { noteType: string | { id: string } } | [noteType: str
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::update
-* @see app/Http/Controllers/NoteTypeController.php:76
+* @see app/Http/Controllers/NoteTypeController.php:77
 * @route '/note-types/{noteType}'
 */
 updateForm.put = (args: { noteType: string | { id: string } } | [noteType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -228,7 +228,7 @@ update.form = updateForm
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::destroy
-* @see app/Http/Controllers/NoteTypeController.php:107
+* @see app/Http/Controllers/NoteTypeController.php:110
 * @route '/note-types/{noteType}'
 */
 export const destroy = (args: { noteType: string | { id: string } } | [noteType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -243,7 +243,7 @@ destroy.definition = {
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::destroy
-* @see app/Http/Controllers/NoteTypeController.php:107
+* @see app/Http/Controllers/NoteTypeController.php:110
 * @route '/note-types/{noteType}'
 */
 destroy.url = (args: { noteType: string | { id: string } } | [noteType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions) => {
@@ -276,7 +276,7 @@ destroy.url = (args: { noteType: string | { id: string } } | [noteType: string |
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::destroy
-* @see app/Http/Controllers/NoteTypeController.php:107
+* @see app/Http/Controllers/NoteTypeController.php:110
 * @route '/note-types/{noteType}'
 */
 destroy.delete = (args: { noteType: string | { id: string } } | [noteType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -286,7 +286,7 @@ destroy.delete = (args: { noteType: string | { id: string } } | [noteType: strin
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::destroy
-* @see app/Http/Controllers/NoteTypeController.php:107
+* @see app/Http/Controllers/NoteTypeController.php:110
 * @route '/note-types/{noteType}'
 */
 const destroyForm = (args: { noteType: string | { id: string } } | [noteType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -301,7 +301,7 @@ const destroyForm = (args: { noteType: string | { id: string } } | [noteType: st
 
 /**
 * @see \App\Http\Controllers\NoteTypeController::destroy
-* @see app/Http/Controllers/NoteTypeController.php:107
+* @see app/Http/Controllers/NoteTypeController.php:110
 * @route '/note-types/{noteType}'
 */
 destroyForm.delete = (args: { noteType: string | { id: string } } | [noteType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({

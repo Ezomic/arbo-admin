@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition } from './../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition } from './../../../../wayfinder'
 /**
 * @see \App\Http\Controllers\AuditLogController::index
 * @see app/Http/Controllers/AuditLogController.php:13
@@ -80,8 +80,6 @@ indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 
 index.form = indexForm
 
-const auditLogs = {
-    index: Object.assign(index, index),
-}
+const AuditLogController = { index }
 
-export default auditLogs
+export default AuditLogController

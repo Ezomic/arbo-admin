@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { Form, Head } from '@inertiajs/vue3';
 import { ShieldCheck } from '@lucide/vue';
+import { ref } from 'vue';
 import Heading from '@/components/Heading.vue';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { update } from '@/routes/tenant-settings';
-import { ref } from 'vue';
 
 const props = defineProps<{
     require2fa: boolean;

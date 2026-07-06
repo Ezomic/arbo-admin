@@ -33,9 +33,18 @@ const actionLabel: Record<string, string> = {
 };
 
 const actionVariant = (action: string): 'default' | 'secondary' | 'destructive' | 'outline' => {
-    if (action === 'medical_case.created') return 'default';
-    if (action === 'medical_case.closed') return 'secondary';
-    if (action === 'medical_case.viewed' || action === 'medical_case.list_viewed') return 'outline';
+    if (action === 'medical_case.created') {
+return 'default';
+}
+
+    if (action === 'medical_case.closed') {
+return 'secondary';
+}
+
+    if (action === 'medical_case.viewed' || action === 'medical_case.list_viewed') {
+return 'outline';
+}
+
     return 'default';
 };
 

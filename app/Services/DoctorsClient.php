@@ -16,6 +16,9 @@ class DoctorsClient extends InternalApiClient
         return config('services.doctors.token');
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getAuditLogs(string $tenantId, int $page = 1, int $perPage = 50): array
     {
         return $this->get('audit-logs', [

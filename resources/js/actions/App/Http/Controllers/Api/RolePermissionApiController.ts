@@ -1,8 +1,8 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition } from './../../../../../wayfinder'
 /**
-* @see \App\Http\Controllers\Api\NoteTypeApiController::index
-* @see app/Http/Controllers/Api/NoteTypeApiController.php:13
-* @route '/api/note-types'
+* @see \App\Http\Controllers\Api\RolePermissionApiController::index
+* @see app/Http/Controllers/Api/RolePermissionApiController.php:12
+* @route '/api/role-permissions'
 */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -11,22 +11,22 @@ export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 index.definition = {
     methods: ["get","head"],
-    url: '/api/note-types',
+    url: '/api/role-permissions',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
-* @see \App\Http\Controllers\Api\NoteTypeApiController::index
-* @see app/Http/Controllers/Api/NoteTypeApiController.php:13
-* @route '/api/note-types'
+* @see \App\Http\Controllers\Api\RolePermissionApiController::index
+* @see app/Http/Controllers/Api/RolePermissionApiController.php:12
+* @route '/api/role-permissions'
 */
 index.url = (options?: RouteQueryOptions) => {
     return index.definition.url + queryParams(options)
 }
 
 /**
-* @see \App\Http\Controllers\Api\NoteTypeApiController::index
-* @see app/Http/Controllers/Api/NoteTypeApiController.php:13
-* @route '/api/note-types'
+* @see \App\Http\Controllers\Api\RolePermissionApiController::index
+* @see app/Http/Controllers/Api/RolePermissionApiController.php:12
+* @route '/api/role-permissions'
 */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -34,9 +34,9 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 
 /**
-* @see \App\Http\Controllers\Api\NoteTypeApiController::index
-* @see app/Http/Controllers/Api/NoteTypeApiController.php:13
-* @route '/api/note-types'
+* @see \App\Http\Controllers\Api\RolePermissionApiController::index
+* @see app/Http/Controllers/Api/RolePermissionApiController.php:12
+* @route '/api/role-permissions'
 */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: index.url(options),
@@ -44,9 +44,9 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 })
 
 /**
-* @see \App\Http\Controllers\Api\NoteTypeApiController::index
-* @see app/Http/Controllers/Api/NoteTypeApiController.php:13
-* @route '/api/note-types'
+* @see \App\Http\Controllers\Api\RolePermissionApiController::index
+* @see app/Http/Controllers/Api/RolePermissionApiController.php:12
+* @route '/api/role-permissions'
 */
 const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: index.url(options),
@@ -54,9 +54,9 @@ const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => (
 })
 
 /**
-* @see \App\Http\Controllers\Api\NoteTypeApiController::index
-* @see app/Http/Controllers/Api/NoteTypeApiController.php:13
-* @route '/api/note-types'
+* @see \App\Http\Controllers\Api\RolePermissionApiController::index
+* @see app/Http/Controllers/Api/RolePermissionApiController.php:12
+* @route '/api/role-permissions'
 */
 indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: index.url(options),
@@ -64,9 +64,9 @@ indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 })
 
 /**
-* @see \App\Http\Controllers\Api\NoteTypeApiController::index
-* @see app/Http/Controllers/Api/NoteTypeApiController.php:13
-* @route '/api/note-types'
+* @see \App\Http\Controllers\Api\RolePermissionApiController::index
+* @see app/Http/Controllers/Api/RolePermissionApiController.php:12
+* @route '/api/role-permissions'
 */
 indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: index.url({
@@ -80,6 +80,6 @@ indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 
 index.form = indexForm
 
-const NoteTypeApiController = { index }
+const RolePermissionApiController = { index }
 
-export default NoteTypeApiController
+export default RolePermissionApiController

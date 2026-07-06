@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\ContractTypeController::index
-* @see app/Http/Controllers/ContractTypeController.php:13
+* @see app/Http/Controllers/ContractTypeController.php:16
 * @route '/contract-types'
 */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -16,7 +16,7 @@ index.definition = {
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::index
-* @see app/Http/Controllers/ContractTypeController.php:13
+* @see app/Http/Controllers/ContractTypeController.php:16
 * @route '/contract-types'
 */
 index.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ index.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::index
-* @see app/Http/Controllers/ContractTypeController.php:13
+* @see app/Http/Controllers/ContractTypeController.php:16
 * @route '/contract-types'
 */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -35,7 +35,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::index
-* @see app/Http/Controllers/ContractTypeController.php:13
+* @see app/Http/Controllers/ContractTypeController.php:16
 * @route '/contract-types'
 */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -45,7 +45,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::index
-* @see app/Http/Controllers/ContractTypeController.php:13
+* @see app/Http/Controllers/ContractTypeController.php:16
 * @route '/contract-types'
 */
 const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -55,7 +55,7 @@ const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => (
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::index
-* @see app/Http/Controllers/ContractTypeController.php:13
+* @see app/Http/Controllers/ContractTypeController.php:16
 * @route '/contract-types'
 */
 indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -65,7 +65,7 @@ indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::index
-* @see app/Http/Controllers/ContractTypeController.php:13
+* @see app/Http/Controllers/ContractTypeController.php:16
 * @route '/contract-types'
 */
 indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -82,7 +82,7 @@ index.form = indexForm
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::store
-* @see app/Http/Controllers/ContractTypeController.php:20
+* @see app/Http/Controllers/ContractTypeController.php:23
 * @route '/contract-types'
 */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -97,7 +97,7 @@ store.definition = {
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::store
-* @see app/Http/Controllers/ContractTypeController.php:20
+* @see app/Http/Controllers/ContractTypeController.php:23
 * @route '/contract-types'
 */
 store.url = (options?: RouteQueryOptions) => {
@@ -106,7 +106,7 @@ store.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::store
-* @see app/Http/Controllers/ContractTypeController.php:20
+* @see app/Http/Controllers/ContractTypeController.php:23
 * @route '/contract-types'
 */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -116,7 +116,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::store
-* @see app/Http/Controllers/ContractTypeController.php:20
+* @see app/Http/Controllers/ContractTypeController.php:23
 * @route '/contract-types'
 */
 const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -126,7 +126,7 @@ const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => 
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::store
-* @see app/Http/Controllers/ContractTypeController.php:20
+* @see app/Http/Controllers/ContractTypeController.php:23
 * @route '/contract-types'
 */
 storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -138,7 +138,7 @@ store.form = storeForm
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::edit
-* @see app/Http/Controllers/ContractTypeController.php:32
+* @see app/Http/Controllers/ContractTypeController.php:35
 * @route '/contract-types/{contractType}/edit'
 */
 export const edit = (args: { contractType: string | { id: string } } | [contractType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -153,7 +153,7 @@ edit.definition = {
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::edit
-* @see app/Http/Controllers/ContractTypeController.php:32
+* @see app/Http/Controllers/ContractTypeController.php:35
 * @route '/contract-types/{contractType}/edit'
 */
 edit.url = (args: { contractType: string | { id: string } } | [contractType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions) => {
@@ -186,7 +186,7 @@ edit.url = (args: { contractType: string | { id: string } } | [contractType: str
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::edit
-* @see app/Http/Controllers/ContractTypeController.php:32
+* @see app/Http/Controllers/ContractTypeController.php:35
 * @route '/contract-types/{contractType}/edit'
 */
 edit.get = (args: { contractType: string | { id: string } } | [contractType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -196,7 +196,7 @@ edit.get = (args: { contractType: string | { id: string } } | [contractType: str
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::edit
-* @see app/Http/Controllers/ContractTypeController.php:32
+* @see app/Http/Controllers/ContractTypeController.php:35
 * @route '/contract-types/{contractType}/edit'
 */
 edit.head = (args: { contractType: string | { id: string } } | [contractType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -206,7 +206,7 @@ edit.head = (args: { contractType: string | { id: string } } | [contractType: st
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::edit
-* @see app/Http/Controllers/ContractTypeController.php:32
+* @see app/Http/Controllers/ContractTypeController.php:35
 * @route '/contract-types/{contractType}/edit'
 */
 const editForm = (args: { contractType: string | { id: string } } | [contractType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -216,7 +216,7 @@ const editForm = (args: { contractType: string | { id: string } } | [contractTyp
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::edit
-* @see app/Http/Controllers/ContractTypeController.php:32
+* @see app/Http/Controllers/ContractTypeController.php:35
 * @route '/contract-types/{contractType}/edit'
 */
 editForm.get = (args: { contractType: string | { id: string } } | [contractType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -226,7 +226,7 @@ editForm.get = (args: { contractType: string | { id: string } } | [contractType:
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::edit
-* @see app/Http/Controllers/ContractTypeController.php:32
+* @see app/Http/Controllers/ContractTypeController.php:35
 * @route '/contract-types/{contractType}/edit'
 */
 editForm.head = (args: { contractType: string | { id: string } } | [contractType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -243,7 +243,7 @@ edit.form = editForm
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::update
-* @see app/Http/Controllers/ContractTypeController.php:39
+* @see app/Http/Controllers/ContractTypeController.php:49
 * @route '/contract-types/{contractType}'
 */
 export const update = (args: { contractType: string | { id: string } } | [contractType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -258,7 +258,7 @@ update.definition = {
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::update
-* @see app/Http/Controllers/ContractTypeController.php:39
+* @see app/Http/Controllers/ContractTypeController.php:49
 * @route '/contract-types/{contractType}'
 */
 update.url = (args: { contractType: string | { id: string } } | [contractType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions) => {
@@ -291,7 +291,7 @@ update.url = (args: { contractType: string | { id: string } } | [contractType: s
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::update
-* @see app/Http/Controllers/ContractTypeController.php:39
+* @see app/Http/Controllers/ContractTypeController.php:49
 * @route '/contract-types/{contractType}'
 */
 update.put = (args: { contractType: string | { id: string } } | [contractType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -301,7 +301,7 @@ update.put = (args: { contractType: string | { id: string } } | [contractType: s
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::update
-* @see app/Http/Controllers/ContractTypeController.php:39
+* @see app/Http/Controllers/ContractTypeController.php:49
 * @route '/contract-types/{contractType}'
 */
 const updateForm = (args: { contractType: string | { id: string } } | [contractType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -316,7 +316,7 @@ const updateForm = (args: { contractType: string | { id: string } } | [contractT
 
 /**
 * @see \App\Http\Controllers\ContractTypeController::update
-* @see app/Http/Controllers/ContractTypeController.php:39
+* @see app/Http/Controllers/ContractTypeController.php:49
 * @route '/contract-types/{contractType}'
 */
 updateForm.put = (args: { contractType: string | { id: string } } | [contractType: string | { id: string } ] | string | { id: string }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({

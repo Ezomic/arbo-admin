@@ -16,7 +16,6 @@ return new class extends Migration
             $table->timestamps();
 
             $table->index(['tenant_id', 'app_slug']);
-            $table->foreign('tenant_id')->references('id')->on('tenants')->cascadeOnDelete();
         });
     }
 
