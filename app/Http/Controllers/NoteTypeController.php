@@ -71,6 +71,8 @@ class NoteTypeController extends Controller
             $noteType->permissions()->create($perm);
         }
 
+        Inertia::flash('toast', ['type' => 'success', 'message' => 'Note type created.']);
+
         return to_route('note-types.index');
     }
 
@@ -104,12 +106,16 @@ class NoteTypeController extends Controller
         $incomingRoles = $incoming->pluck('role')->all();
         $noteType->permissions()->whereNotIn('role', $incomingRoles)->delete();
 
+        Inertia::flash('toast', ['type' => 'success', 'message' => 'Note type updated.']);
+
         return to_route('note-types.index');
     }
 
     public function destroy(NoteType $noteType): RedirectResponse
     {
         $noteType->delete();
+
+        Inertia::flash('toast', ['type' => 'success', 'message' => 'Note type deleted.']);
 
         return to_route('note-types.index');
     }
