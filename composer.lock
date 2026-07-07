@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "72269b8eb325c5e42d3cd21513b403d8",
+    "content-hash": "fe24b1e36f49ef482b3d8dc833a2710d",
     "packages": [
         {
             "name": "brick/math",
@@ -3673,7 +3673,7 @@
             "dist": {
                 "type": "path",
                 "url": "../identity-sso-kit",
-                "reference": "b0228202fa2e8936ee1edea49b1b911ff3886fa0"
+                "reference": "45601ac322c15011ad2fece983dced80d6518de2"
             },
             "require": {
                 "firebase/php-jwt": "^7.1",
@@ -10254,7 +10254,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.3"
+        "php": "^8.4"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"
