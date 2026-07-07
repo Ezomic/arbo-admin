@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\EnforceAbsoluteSessionTimeout;
+use App\Http\Middleware\EnsureApplicationManager;
 use App\Http\Middleware\HandleAppearance;
 use App\Http\Middleware\HandleInertiaRequests;
 use Illuminate\Foundation\Application;
@@ -31,6 +32,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'abilities' => CheckAbilities::class,
             'ability' => CheckForAnyAbility::class,
+            'application-manager' => EnsureApplicationManager::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
