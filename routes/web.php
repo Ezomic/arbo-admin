@@ -17,7 +17,7 @@ Route::get('login', RedirectToIdentityController::class)->name('login');
 Route::get('sso/callback', SsoCallbackController::class)->name('sso.callback');
 Route::post('logout', LogoutController::class)->middleware('auth')->name('logout');
 
-Route::middleware(['auth', 'application-manager'])->group(function () {
+Route::middleware(['auth', 'application-manager', 'require.2fa'])->group(function () {
     Route::redirect('/', '/contract-types')->name('home');
     Route::redirect('dashboard', '/contract-types')->name('dashboard');
 

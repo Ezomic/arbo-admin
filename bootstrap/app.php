@@ -4,6 +4,7 @@ use App\Http\Middleware\EnforceAbsoluteSessionTimeout;
 use App\Http\Middleware\EnsureApplicationManager;
 use App\Http\Middleware\HandleAppearance;
 use App\Http\Middleware\HandleInertiaRequests;
+use App\Http\Middleware\Require2FA;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -33,6 +34,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'abilities' => CheckAbilities::class,
             'ability' => CheckForAnyAbility::class,
             'application-manager' => EnsureApplicationManager::class,
+            'require.2fa' => Require2FA::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
