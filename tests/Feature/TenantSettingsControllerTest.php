@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 test('show reflects the tenant require_2fa flag via the tenant relation', function () {
     $tenant = Tenant::query()->create(['id' => (string) Str::uuid(), 'name' => 'Acme', 'require_2fa' => true]);
     $user = User::factory()->create(['tenant_id' => $tenant->id]);
-    $this->actingAs($user);
+    $this->actingAs($user)->withSession(['_2fa_reverified_at' => now()->timestamp]);
 
     $response = $this->get(route('tenant-settings.show'));
 
