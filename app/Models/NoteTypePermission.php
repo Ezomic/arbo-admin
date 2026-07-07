@@ -15,8 +15,8 @@ class NoteTypePermission extends Model
     protected function casts(): array
     {
         return [
-            'can_read'   => 'boolean',
-            'can_write'  => 'boolean',
+            'can_read' => 'boolean',
+            'can_write' => 'boolean',
             'can_update' => 'boolean',
             'can_delete' => 'boolean',
         ];
