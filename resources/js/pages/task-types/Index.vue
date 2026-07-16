@@ -6,7 +6,12 @@ import { ref } from 'vue';
 import Heading from '@/components/Heading.vue';
 import InputError from '@/components/InputError.vue';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import {
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+} from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { edit, store } from '@/routes/task-types';
@@ -34,7 +39,12 @@ const showCreateDialog = ref(false);
                 title="Task Types"
                 description="Tenant-wide task types your case officers can assign to work items"
             />
-            <Button variant="ghost" size="icon" aria-label="Add task type" @click="showCreateDialog = true">
+            <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Add task type"
+                @click="showCreateDialog = true"
+            >
                 <Plus class="size-4" />
             </Button>
         </div>
@@ -46,7 +56,10 @@ const showCreateDialog = ref(false);
                     class="flex flex-col rounded-lg border p-4 transition-colors hover:bg-muted/50"
                 >
                     <div class="font-medium">{{ taskType.name }}</div>
-                    <div v-if="taskType.description" class="text-sm text-muted-foreground">
+                    <div
+                        v-if="taskType.description"
+                        class="text-sm text-muted-foreground"
+                    >
                         {{ taskType.description }}
                     </div>
                     <div class="mt-1 text-xs text-muted-foreground">
@@ -54,7 +67,10 @@ const showCreateDialog = ref(false);
                     </div>
                 </Link>
             </li>
-            <li v-if="taskTypes.length === 0" class="text-sm text-muted-foreground">
+            <li
+                v-if="taskTypes.length === 0"
+                class="text-sm text-muted-foreground"
+            >
                 No task types yet.
             </li>
         </ul>
@@ -73,15 +89,26 @@ const showCreateDialog = ref(false);
             >
                 <div class="grid gap-2">
                     <Label for="name">Name</Label>
-                    <Input id="name" name="name" required placeholder="e.g. Follow-up call" />
+                    <Input
+                        id="name"
+                        name="name"
+                        required
+                        placeholder="e.g. Follow-up call"
+                    />
                     <InputError :message="errors.name" />
                 </div>
                 <div class="grid gap-2">
                     <Label for="description">Description</Label>
-                    <Input id="description" name="description" placeholder="Optional" />
+                    <Input
+                        id="description"
+                        name="description"
+                        placeholder="Optional"
+                    />
                     <InputError :message="errors.description" />
                 </div>
-                <Button type="submit" :disabled="processing">Add task type</Button>
+                <Button type="submit" :disabled="processing"
+                    >Add task type</Button
+                >
             </Form>
         </DialogContent>
     </Dialog>

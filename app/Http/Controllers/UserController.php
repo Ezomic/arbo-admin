@@ -46,9 +46,9 @@ class UserController extends Controller
             'scope_id' => ['nullable', 'uuid'],
         ]);
 
-        $created = $identity->createUser($user->tenant_id, $data['name'], $data['email'], $data['user_type_id'], $data['scope_id'] ?? null);
+        $identity->createUser($user->tenant_id, $data['name'], $data['email'], $data['user_type_id'], $data['scope_id'] ?? null);
 
-        return to_route('users.index')->with('temporaryPassword', $created['temporary_password'] ?? null);
+        return to_route('users.index');
     }
 
     public function update(Request $request, string $uuid, IdentityClient $identity): RedirectResponse

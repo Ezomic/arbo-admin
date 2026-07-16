@@ -6,13 +6,23 @@ import Heading from '@/components/Heading.vue';
 import InputError from '@/components/InputError.vue';
 import PermissionTree from '@/components/PermissionTree.vue';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import {
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+} from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { edit, store } from '@/routes/roles';
 
 type Portal = { slug: string; name: string };
-type Permission = { id: string; parent_id: string | null; app_slug: string; name: string };
+type Permission = {
+    id: string;
+    parent_id: string | null;
+    app_slug: string;
+    name: string;
+};
 
 type Role = {
     id: string;
@@ -30,17 +40,26 @@ const props = defineProps<{
 
 const showCreateDialogFor = ref<string | null>(null);
 
-const rolesFor = (slug: string) => props.roles.filter((role) => role.app_slug === slug);
-const permissionsFor = (slug: string) => props.permissions.filter((permission) => permission.app_slug === slug);
+const rolesFor = (slug: string) =>
+    props.roles.filter((role) => role.app_slug === slug);
+const permissionsFor = (slug: string) =>
+    props.permissions.filter((permission) => permission.app_slug === slug);
 </script>
 
 <template>
     <Head title="Roles" />
 
     <div class="flex flex-col gap-8 p-4">
-        <Heading title="Roles" description="Each portal has its own roles and permissions" />
+        <Heading
+            title="Roles"
+            description="Each portal has its own roles and permissions"
+        />
 
-        <section v-for="portal in portals" :key="portal.slug" class="flex flex-col gap-3">
+        <section
+            v-for="portal in portals"
+            :key="portal.slug"
+            class="flex flex-col gap-3"
+        >
             <div class="flex items-center justify-between">
                 <h2 class="font-medium">{{ portal.name }}</h2>
                 <Button
@@ -60,15 +79,23 @@ const permissionsFor = (slug: string) => props.permissions.filter((permission) =
                         class="flex flex-col rounded-lg border p-4 transition-colors hover:bg-muted/50"
                     >
                         <div class="font-medium">{{ role.name }}</div>
-                        <div v-if="role.description" class="text-sm text-muted-foreground">
+                        <div
+                            v-if="role.description"
+                            class="text-sm text-muted-foreground"
+                        >
                             {{ role.description }}
                         </div>
                         <div class="mt-1 text-xs text-muted-foreground">
-                            {{ role.permission_ids.length }} permission{{ role.permission_ids.length === 1 ? '' : 's' }}
+                            {{ role.permission_ids.length }} permission{{
+                                role.permission_ids.length === 1 ? '' : 's'
+                            }}
                         </div>
                     </Link>
                 </li>
-                <li v-if="rolesFor(portal.slug).length === 0" class="text-sm text-muted-foreground">
+                <li
+                    v-if="rolesFor(portal.slug).length === 0"
+                    class="text-sm text-muted-foreground"
+                >
                     No {{ portal.name }} roles yet.
                 </li>
             </ul>
@@ -77,12 +104,25 @@ const permissionsFor = (slug: string) => props.permissions.filter((permission) =
 
     <Dialog
         :open="showCreateDialogFor !== null"
-        @update:open="(open) => { if (!open) showCreateDialogFor = null; }"
+        @update:open="
+            (open) => {
+                if (!open) showCreateDialogFor = null;
+            }
+        "
     >
-        <DialogContent v-if="showCreateDialogFor" class="max-h-[85vh] overflow-y-auto">
+        <DialogContent
+            v-if="showCreateDialogFor"
+            class="max-h-[85vh] overflow-y-auto"
+        >
             <DialogHeader>
                 <DialogTitle>
-                    Add {{ portals.find((portal) => portal.slug === showCreateDialogFor)?.name }} role
+                    Add
+                    {{
+                        portals.find(
+                            (portal) => portal.slug === showCreateDialogFor,
+                        )?.name
+                    }}
+                    role
                 </DialogTitle>
             </DialogHeader>
             <Form
@@ -91,24 +131,39 @@ const permissionsFor = (slug: string) => props.permissions.filter((permission) =
                 :reset-on-success="['name', 'description']"
                 class="space-y-4"
             >
-                <input type="hidden" name="app_slug" :value="showCreateDialogFor" />
+                <input
+                    type="hidden"
+                    name="app_slug"
+                    :value="showCreateDialogFor"
+                />
                 <div class="grid gap-2">
                     <Label for="name">Name</Label>
-                    <Input id="name" name="name" required placeholder="e.g. Senior case officer" />
+                    <Input
+                        id="name"
+                        name="name"
+                        required
+                        placeholder="e.g. Senior case officer"
+                    />
                     <InputError :message="errors.name" />
                 </div>
                 <div class="grid gap-2">
                     <Label for="description">Description</Label>
-                    <Input id="description" name="description" placeholder="Optional" />
+                    <Input
+                        id="description"
+                        name="description"
+                        placeholder="Optional"
+                    />
                     <InputError :message="errors.description" />
                 </div>
                 <div class="grid gap-2">
                     <Label>Permissions</Label>
-                    <PermissionTree :permissions="permissionsFor(showCreateDialogFor)" :selected-ids="[]" />
+                    <PermissionTree
+                        :permissions="permissionsFor(showCreateDialogFor)"
+                        :selected-ids="[]"
+                    />
                 </div>
                 <Button type="submit" :disabled="processing">Add role</Button>
             </Form>
         </DialogContent>
     </Dialog>
-
 </template>
