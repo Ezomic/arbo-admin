@@ -5,7 +5,12 @@ import { ref } from 'vue';
 import Heading from '@/components/Heading.vue';
 import InputError from '@/components/InputError.vue';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import {
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+} from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { edit, store } from '@/routes/contract-types';
@@ -33,7 +38,12 @@ const showCreateDialog = ref(false);
                 title="Contract Types"
                 description="Tenant-wide contract types your case officers can assign when creating a contract"
             />
-            <Button variant="ghost" size="icon" aria-label="Add contract type" @click="showCreateDialog = true">
+            <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Add contract type"
+                @click="showCreateDialog = true"
+            >
                 <Plus class="size-4" />
             </Button>
         </div>
@@ -45,7 +55,10 @@ const showCreateDialog = ref(false);
                     class="flex flex-col rounded-lg border p-4 transition-colors hover:bg-muted/50"
                 >
                     <div class="font-medium">{{ contractType.name }}</div>
-                    <div v-if="contractType.description" class="text-sm text-muted-foreground">
+                    <div
+                        v-if="contractType.description"
+                        class="text-sm text-muted-foreground"
+                    >
                         {{ contractType.description }}
                     </div>
                     <div class="mt-1 text-xs text-muted-foreground">
@@ -53,7 +66,10 @@ const showCreateDialog = ref(false);
                     </div>
                 </Link>
             </li>
-            <li v-if="contractTypes.length === 0" class="text-sm text-muted-foreground">
+            <li
+                v-if="contractTypes.length === 0"
+                class="text-sm text-muted-foreground"
+            >
                 No contract types yet.
             </li>
         </ul>
@@ -72,15 +88,26 @@ const showCreateDialog = ref(false);
             >
                 <div class="grid gap-2">
                     <Label for="name">Name</Label>
-                    <Input id="name" name="name" required placeholder="e.g. Basic verzuimbegeleiding" />
+                    <Input
+                        id="name"
+                        name="name"
+                        required
+                        placeholder="e.g. Basic verzuimbegeleiding"
+                    />
                     <InputError :message="errors.name" />
                 </div>
                 <div class="grid gap-2">
                     <Label for="description">Description</Label>
-                    <Input id="description" name="description" placeholder="Optional" />
+                    <Input
+                        id="description"
+                        name="description"
+                        placeholder="Optional"
+                    />
                     <InputError :message="errors.description" />
                 </div>
-                <Button type="submit" :disabled="processing">Add contract type</Button>
+                <Button type="submit" :disabled="processing"
+                    >Add contract type</Button
+                >
             </Form>
         </DialogContent>
     </Dialog>

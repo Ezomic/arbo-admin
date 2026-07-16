@@ -32,18 +32,23 @@ const actionLabel: Record<string, string> = {
     'medical_case.closed': 'Case closed',
 };
 
-const actionVariant = (action: string): 'default' | 'secondary' | 'destructive' | 'outline' => {
+const actionVariant = (
+    action: string,
+): 'default' | 'secondary' | 'destructive' | 'outline' => {
     if (action === 'medical_case.created') {
-return 'default';
-}
+        return 'default';
+    }
 
     if (action === 'medical_case.closed') {
-return 'secondary';
-}
+        return 'secondary';
+    }
 
-    if (action === 'medical_case.viewed' || action === 'medical_case.list_viewed') {
-return 'outline';
-}
+    if (
+        action === 'medical_case.viewed' ||
+        action === 'medical_case.list_viewed'
+    ) {
+        return 'outline';
+    }
 
     return 'default';
 };
@@ -67,21 +72,21 @@ const formatDate = (iso: string) =>
 
     <div class="flex flex-col gap-6 p-4">
         <div class="flex items-center gap-3">
-            <ShieldAlert class="text-muted-foreground size-5" />
+            <ShieldAlert class="size-5 text-muted-foreground" />
             <Heading
                 title="Medical Record Audit Log"
                 description="Every access to medical cases in the Doctors portal — NEN 7513 compliant, tamper-evident"
             />
         </div>
 
-        <div class="text-muted-foreground text-sm">
+        <div class="text-sm text-muted-foreground">
             {{ total }} entries total
         </div>
 
         <div class="flex flex-col gap-1 rounded-lg border">
             <div
                 v-if="logs.length === 0"
-                class="text-muted-foreground p-6 text-center text-sm"
+                class="p-6 text-center text-sm text-muted-foreground"
             >
                 No audit log entries yet.
             </div>
@@ -99,26 +104,43 @@ const formatDate = (iso: string) =>
                     <div class="truncate text-sm font-medium">
                         {{ log.user_name ?? 'Unknown user' }}
                     </div>
-                    <div v-if="log.subject_id" class="text-muted-foreground font-mono text-xs">
+                    <div
+                        v-if="log.subject_id"
+                        class="font-mono text-xs text-muted-foreground"
+                    >
                         Case {{ log.subject_id }}
                     </div>
                 </div>
-                <div class="text-muted-foreground shrink-0 text-xs">
+                <div class="shrink-0 text-xs text-muted-foreground">
                     {{ log.ip_address }}
                 </div>
-                <div class="text-muted-foreground w-36 shrink-0 text-right text-xs">
+                <div
+                    class="w-36 shrink-0 text-right text-xs text-muted-foreground"
+                >
                     {{ formatDate(log.created_at) }}
                 </div>
             </div>
         </div>
 
         <div v-if="lastPage > 1" class="flex items-center justify-between">
-            <Button variant="outline" size="sm" :disabled="!hasPrev" @click="navigate(currentPage - 1)">
+            <Button
+                variant="outline"
+                size="sm"
+                :disabled="!hasPrev"
+                @click="navigate(currentPage - 1)"
+            >
                 <ChevronLeft class="mr-1 size-4" />
                 Previous
             </Button>
-            <span class="text-muted-foreground text-sm">Page {{ currentPage }} of {{ lastPage }}</span>
-            <Button variant="outline" size="sm" :disabled="!hasNext" @click="navigate(currentPage + 1)">
+            <span class="text-sm text-muted-foreground"
+                >Page {{ currentPage }} of {{ lastPage }}</span
+            >
+            <Button
+                variant="outline"
+                size="sm"
+                :disabled="!hasNext"
+                @click="navigate(currentPage + 1)"
+            >
                 Next
                 <ChevronRight class="ml-1 size-4" />
             </Button>

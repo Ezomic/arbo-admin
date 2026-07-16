@@ -25,7 +25,7 @@ test('store creates a user for the acting tenant', function () {
     $user = User::factory()->create(['tenant_id' => $tenantId]);
     $this->actingAs($user);
 
-    Http::fake(['*/api/users' => Http::response(['id' => (string) Str::uuid(), 'temporary_password' => 'temp-pass'])]);
+    Http::fake(['*/api/users' => Http::response(['id' => (string) Str::uuid()])]);
 
     $response = $this->post('/users', [
         'name' => 'New Doctor',
